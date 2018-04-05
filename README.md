@@ -51,6 +51,8 @@ overview of the most commonly used shortcuts to get you through this pain:
 * `M-_    ` Redo
 * `C-x u  ` Show the undo-tree
 * `C-x m  ` Open magit. It's a magical git interface for emacs
+* `C-x C-c` Kill Emacs (save-buffers-kill-emacs)
+* `C-z    ` Suspend Emacs (suspend-emacs). Resume from shell with %emacs
 
 ### Navigation
 
