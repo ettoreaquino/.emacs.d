@@ -58,7 +58,7 @@
 ;; LaTeX
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
-(setq Tex-save-query nill)
+(setq Tex-save-query nil)
 (setq Tex-PDF-mode t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
