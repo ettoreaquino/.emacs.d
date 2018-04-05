@@ -46,8 +46,7 @@ overview of the most commonly used shortcuts to get you through this pain:
 * `C-g    ` Quit out of whatever mess you've gotten yourself into
 * `M-x    ` Run a command by name
 * `C-.    ` Autocomplete
-* `C-_    ` Undo one enrty of the undo records
-* `C-x u  ` Same as C-_ or even C-/
+* `C-_    ` Undo one entry of the undo records
 * `M-_    ` Redo
 * `C-x u  ` Show the undo-tree
 * `C-x m  ` Open magit. It's a magical git interface for emacs
