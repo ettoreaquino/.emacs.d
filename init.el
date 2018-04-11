@@ -63,6 +63,11 @@
 (setq Tex-save-query nil)
 (setq Tex-PDF-mode t)
 
+;; Java
+(require 'eclim)
+(add-hook 'java-mode-hook 'eclim-mode)
+(require 'eclimd)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                               DEFAULT Emacs CONFIGURATIONS                               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -71,22 +76,11 @@
 (setq-default indent-tabs-mode nil)
 
 ;; Default tab (spaces) size
-(setq tab-width 2)
-
-;; Default S-tab (backtab) to tab-width
-(global-set-key (kbd "<S-tab>") 'un-indent-by-removing-2-spaces)
-(defun un-indent-by-removing-4-spaces ()
-  "remove spaces from beginning of of line"
-  (interactive)
-  (save-excursion
-    (save-match-data
-      (beginning-of-line)
-      ;; get rid of tabs at beginning of line
-      (when (looking-at "^\\s-+")
-        (untabify (match-beginning 0) (match-end 0)))
-      (when (looking-at "^    ")
-        (replace-match "")))))
+(setq-default tab-width 4)
+(setq tab-width 4)
 
 ;; Delete highlited
 (delete-selection-mode 1)
 
+;; Auto-complete mode of operation
+(setq ac-auto-start 3)

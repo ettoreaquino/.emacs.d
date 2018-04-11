@@ -27,8 +27,6 @@ In case you are running in a linux system:
      2. Install `eclim`
      3. Install `ac-emacs-eclim` "auto complete"
   
-    
-  
 ## Survival guide for the first week of emacs
 As presented by  magnars in "https://github.com/magnars/.emacs.d/blob/master/README.md"
 
@@ -83,6 +81,16 @@ overview of the most commonly used shortcuts to get you through this pain:
 * `C-x C-i` Go to symbol
 * `C-s    ` Search forward. Press `C-s` again to go further.
 * `C-r    ` Search backward. Press `C-r` again to go further.
+
+### Buffer Menu (`C-x C-b`)
+  https://www.gnu.org/software/emacs/manual/html_node/emacs/Several-Buffers.html
+* "." Indicates the buffer is current
+* "%" Indicates the buffer is a read-only
+* "*" Indicates the buffer is modified
+* `d  ` Flag buffer for deletion. Move point down to next line
+* `s  ` Flag buffer for saving
+* `x  ` Perform all flagged deletions and saves
+* `u  ` Remove all flags from the current line. Move down
 
 ### Window management
 
