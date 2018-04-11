@@ -20,12 +20,12 @@ All packages can be cloned by grabing the dependencies
 
 In case you are running in a linux system:
   1. Place the ".bin" file inside your eclipse/ directory.
-  2. `chmod +x eclim_##.bin` where ## stands for the version number downloaded;
+  2. `chmod +x eclim_##.bin` where `##` stands for the version number downloaded;
   3. `./eclim_##.bin` in case a permission is denied `sudo ./eclim_##.bin`
   4. `emacs`
-    1. `M-x list-packages`
-      1. Install `eclim`
-      2. Install `ac-emacs-eclim` "auto complete"
+     1. `M-x list-packages`
+     2. Install `eclim`
+     3. Install `ac-emacs-eclim` "auto complete"
   
     
   
