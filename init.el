@@ -24,7 +24,9 @@
    [default default default italic underline success warning error])
  '(custom-enabled-themes (quote (tango-dark)))
  '(delimit-columns-end 100)
- '(package-selected-packages (quote (scss-mode helm-spotify rjsx-mode))))
+ '(package-selected-packages
+   (quote
+    (markdown-mode eclim scss-mode helm-spotify rjsx-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

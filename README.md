@@ -1,15 +1,31 @@
 # An attempt to dive in deeper waters with Emacs.
-Emacs has an initialization file usually called .emacs, .emacs.el or init.el when placed within the .emacs.d directory.
-Emacs looks for this file at your home directory "~/" or at the .emacs.d directory.
-Imagining you might work from diferent computers, having the init file within your reach
-can be very useful. This repository was created solely for this purpose.
+Emacs has an initialization file usually called .emacs, .emacs.el or init.el.
+Emacs looks for this within your home directory "~/" or at the .emacs.d directory.
 
-## Setup
-All packages can be cloned by grabing all the dependencies
- git clone
+I particularly like the idea of using the "init.el", for the simple reason that it
+stays within the .emacs.d/ directory, which can be maintained using git with all the
+other necessary emacs files and packages. 
 
-As presented by  magnars in "https://github.com/magnars/.emacs.d/blob/master/README.md"
+## Overall Setup
+All packages can be cloned by grabing the dependencies
+ `git clone https://github.com/ettoreaquino/.emacs.d.git`
+
+## Java Setup with Eclim
+### Eclipse
+  In case you don't have Eclipse installed: " https://www.eclipse.org/downloads/ "
+  
+### Eclim
+  Eclim is a protocol for communication with and Eclipse server from some client.
+Get the core protocol from " http://eclim.org/install.html " downloading the ".bin" file.
+
+In case you are running from a linux system:
+  1. Place the ".bin" file inside your eclipse/ directory.
+  2. `chmod +x eclim_##.bin` where ## stands for the version number downloaded;
+  3. `./eclim_##.bin` in case a permission is denied `sudo ./eclim_##.bin`
+  4. `emacs`
+  
 ## Survival guide for the first week of emacs
+As presented by  magnars in "https://github.com/magnars/.emacs.d/blob/master/README.md"
 
 When you start using emacs for the first time, your habits fight you every inch
 of the way. Your fingers long for the good old familiar keybindings. Here's an
