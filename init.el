@@ -26,7 +26,7 @@
  '(delimit-columns-end 100)
  '(package-selected-packages
    (quote
-    (markdown-mode eclim scss-mode helm-spotify rjsx-mode))))
+    (ac-emacs-eclim markdown-mode eclim scss-mode helm-spotify rjsx-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

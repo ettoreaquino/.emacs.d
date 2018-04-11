@@ -16,13 +16,18 @@ All packages can be cloned by grabing the dependencies
   
 ### Eclim
   Eclim is a protocol for communication with and Eclipse server from some client.
-Get the core protocol from " http://eclim.org/install.html " downloading the ".bin" file.
+  Get the core protocol from " http://eclim.org/install.html " downloading the ".bin" file.
 
-In case you are running from a linux system:
+In case you are running in a linux system:
   1. Place the ".bin" file inside your eclipse/ directory.
   2. `chmod +x eclim_##.bin` where ## stands for the version number downloaded;
   3. `./eclim_##.bin` in case a permission is denied `sudo ./eclim_##.bin`
   4. `emacs`
+    1. `M-x list-packages`
+      1. Install `eclim`
+      2. Install `ac-emacs-eclim` "auto complete"
+  
+    
   
 ## Survival guide for the first week of emacs
 As presented by  magnars in "https://github.com/magnars/.emacs.d/blob/master/README.md"
