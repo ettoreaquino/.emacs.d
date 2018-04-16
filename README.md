@@ -28,7 +28,10 @@ In case you are running in a linux system:
      3. Install `ac-emacs-eclim` "auto complete"
   
 ## Survival guide for the first week of emacs
-As presented by  magnars in "https://github.com/magnars/.emacs.d/blob/master/README.md"
+The following guide was composed from magnars tamplate:
+ "https://github.com/magnars/.emacs.d/blob/master/README.md"
+and slowly improved using Emacs manual:
+ "https://www.gnu.org/software/emacs/manual/"
 
 When you start using emacs for the first time, your habits fight you every inch
 of the way. Your fingers long for the good old familiar keybindings. Here's an
@@ -92,13 +95,19 @@ overview of the most commonly used shortcuts to get you through this pain:
 * `x  ` Perform all flagged deletions and saves
 * `u  ` Remove all flags from the current line. Move down
 
-### Window management
+### Window Management
 
 * `C-x 0  ` Close this window
 * `C-x 1  ` Close other windows
 * `C-x 2  ` Split window horizontally
 * `C-x 3  ` Split window vertically
-* `S-arrow` Jump to window to the left/right/up/down
+
+### Frame Management
+* `C-x 5 2` Create a new frame
+* `C-x 5 b` Selects a buffer in another frame
+* `C-x 5 f` Visit a file and select its buffer in another frame
+* `C-x 5 d` Select a Dired buffer for a directory in another frame
+* `C-x 5 0` Close the selected frame
 
 ### Help
 
