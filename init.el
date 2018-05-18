@@ -23,16 +23,22 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(custom-enabled-themes (quote (tango-dark)))
+ '(custom-safe-themes
+   (quote
+    ("eecacf3fb8efc90e6f7478f6143fd168342bbfa261654a754c7d47761cec07c8" "a4d03266add9a1c8f12b5309612cbbf96e1291773c7bc4fb685bfdaf83b721c6" default)))
  '(delimit-columns-end 100)
  '(package-selected-packages
    (quote
-    (ac-emacs-eclim markdown-mode eclim scss-mode helm-spotify rjsx-mode))))
+    (yafolding dracula-theme darktooth-theme ac-emacs-eclim markdown-mode eclim scss-mode helm-spotify rjsx-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Load Dracula theme on start)
+(load-theme 'dracula t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                           FRONT-END PACKAGES AND CONFIGURATIONS                          ;;
@@ -72,18 +78,38 @@
 ;;                               DEFAULT Emacs CONFIGURATIONS                               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Set list-buffers to use ibuffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 ;; Use spaces instead of tabs
 (setq-default indent-tabs-mode nil)
 
 ;; Default tab (spaces) size
-(setq-default tab-width 4)
-(setq tab-width 4)
+(setq-default tab-width 2)
+(setq tab-width 2)
+
+;; Set backtab to remove 2 spaces
+(global-set-key (kbd "<backtab>") 'un-indent-by-removing-2-spaces)
+(defun un-indent-by-removing-2-spaces ()
+  "remove 2 spaces from beginning of of line"
+  (interactive)
+  (save-excursion
+    (save-match-data
+      (beginning-of-line)
+      ;; get rid of tabs at beginning of line
+      (when (looking-at "^\\s-+")
+        (untabify (match-beginning 0) (match-end 0)))
+      (when (looking-at "^  ")
+        (replace-match "")))))
 
 ;; Delete highlited
 (delete-selection-mode 1)
 
 ;; Auto-complete mode of operation
 (setq ac-auto-start 3)
+
+;; Stop auto-indent
+(when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
 
 ;; Buffer size adjustment
 (global-set-key (kbd "<C-up>") 'shrink-window)
@@ -93,3 +119,14 @@
 
 ;; Open frame maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+;; Improve frame separator line
+(set-face-background 'vertical-border "gray")
+(set-face-foreground 'vertical-border (face-background 'vertical-border))
+
+(defvar yafolding-mode-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "<C-S-return>") #'yafolding-hide-parent-element)
+    (define-key map (kbd "<C-M-return>") #'yafolding-toggle-all)
+    (define-key map (kbd "<C-return>") #'yafolding-toggle-element)
+    map))
