@@ -29,7 +29,7 @@
  '(delimit-columns-end 100)
  '(package-selected-packages
    (quote
-    (yafolding dracula-theme darktooth-theme ac-emacs-eclim markdown-mode eclim scss-mode helm-spotify rjsx-mode))))
+    (flymake-css yafolding dracula-theme darktooth-theme ac-emacs-eclim markdown-mode eclim scss-mode helm-spotify rjsx-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -39,6 +39,9 @@
 
 ;; Load Dracula theme on start)
 (load-theme 'dracula t)
+
+;; Auto-revert-mode (auto refresh document when the file changes in the disk, git checkout or reset for example)
+(global-auto-revert-mode t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                           FRONT-END PACKAGES AND CONFIGURATIONS                          ;;
@@ -55,6 +58,10 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/scss-mode-20180123.908"))
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
+;; flymake-css
+(require 'flymake-css)
+(add-hook 'css-mode-hook 'flymake-css-load)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                           LANGUAGE PACKAGES AND CONFIGURATIONS                           ;;
@@ -87,6 +94,8 @@
 ;; Default tab (spaces) size
 (setq-default tab-width 2)
 (setq tab-width 2)
+
+(setq js2-basic-offset 2)
 
 ;; Set backtab to remove 2 spaces
 (global-set-key (kbd "<backtab>") 'un-indent-by-removing-2-spaces)
@@ -130,3 +139,4 @@
     (define-key map (kbd "<C-M-return>") #'yafolding-toggle-all)
     (define-key map (kbd "<C-return>") #'yafolding-toggle-element)
     map))
+
