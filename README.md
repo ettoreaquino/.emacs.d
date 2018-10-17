@@ -8,9 +8,9 @@ other necessary emacs files and packages.
 
 ## Overall Setup
 ### Installation
-In case you are using Ubuntu, Kevin Kelley's PPA might be the most painless way to install Emacs:
- `sudo add-apt-repository ppa:kelleyk/emacs`
- `sudo apt update`
+In case you are using Ubuntu, Kevin Kelley's PPA might be the most painless way to install Emacs:<br/>
+ `sudo add-apt-repository ppa:kelleyk/emacs`<br/>
+ `sudo apt update`<br/>
  `sudo apt install emacs26` : based on 26.x-series releases.
 ### Clonning repository
 All packages can be cloned by grabing the dependencies
