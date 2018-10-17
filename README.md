@@ -32,7 +32,22 @@ In case you are running in a linux system:
      1. `M-x list-packages`
      2. Install `eclim`
      3. Install `ac-emacs-eclim` "auto complete"
-  
+     
+## Clojure Setup with Cider
+### Clojure
+ Clojure is predominantly a functional programming language, combining the approachability and interactive development of a scripting language with an efficient and robust infrastructure for multithreaded programming. "https://clojure.org/".
+ I started learning Clojure as a way to develop my back-end programming skills. Specially because it is completely dinamic and provides easy access to the Java frameworks. Most of the stuff writen here was taken out of "http://clojure-doc.org/articles/tutorials/emacs.html" and "http://fgiasson.com/blog/index.php/2016/06/14/my-optimal-gnu-emacs-settings-for-developing-clojure-revised/". 
+ Start by installing Leiningen (https://leiningen.org/), a dependency management and build automation tool. It helps out software projects writen in Clojure language. Make sure you have JAVA already installed.
+
+### CIDER
+ Clojure Integrated Development and REPL. The Clojure IDE includes everythin you need to work in Emacs. It not only runs the REPL but also debugs code, looks for definition and etc.
+ 
+ After starting Emacs, install the following packages by typing:
+  1. `M-x package-install [RET] clojure [RET]`
+  2. `M-x package-install [RET] cider [RET]` - Clojure Integrated Development
+  3. `M-x package-install [RET] company [RET]` - Auto-completion inside of source code and REPL buffers.
+  4. `M-x package-install [RET] rainbow-delimiters] [RET]` - Highlights parentheses, brackets, and braces according to their depth.
+
 ## Survival guide for the first week of emacs
 The following guide was composed from magnars tamplate:
  "https://github.com/magnars/.emacs.d/blob/master/README.md"
