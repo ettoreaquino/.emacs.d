@@ -7,6 +7,12 @@ stays within the .emacs.d/ directory, which can be maintained using git with all
 other necessary emacs files and packages. 
 
 ## Overall Setup
+### Installation
+In case you are using Ubuntu, Kevin Kelley's PPA might be the most painless way to install Emacs:
+ `sudo add-apt-repository ppa:kelleyk/emacs`
+ `sudo apt update`
+ `sudo apt install emacs26` : based on 26.x-series releases.
+### Clonning repository
 All packages can be cloned by grabing the dependencies
  `git clone https://github.com/ettoreaquino/.emacs.d.git`
 
