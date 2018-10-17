@@ -42,7 +42,7 @@ In case you are running in a linux system:
 ### CIDER
  Clojure Integrated Development and REPL. The Clojure IDE includes everythin you need to work in Emacs. It not only runs the REPL but also debugs code, looks for definition and etc.
  
- Instructions afters starting Emacs, install the following packages by typing:
+ After starting Emacs, install the following packages by typing:
   1. `M-x package-install [RET] clojure [RET]`
   2. `M-x package-install [RET] cider [RET]` - Clojure Integrated Development
   3. `M-x package-install [RET] company [RET]` - Auto-completion inside of source code and REPL buffers.
