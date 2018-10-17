@@ -13,7 +13,7 @@ In case you are using Ubuntu, Kevin Kelley's PPA might be the most painless way 
  `sudo apt update`<br/>
  `sudo apt install emacs26` : based on 26.x-series releases.
 ### Clonning repository
-All packages can be cloned by grabing the dependencies
+All packages can be cloned by grabing the dependencies:<br/>
  `git clone https://github.com/ettoreaquino/.emacs.d.git`
 
 ## Java Setup with Eclim
