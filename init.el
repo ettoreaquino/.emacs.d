@@ -3,8 +3,8 @@
                     (not (gnutls-available-p))))
        (proto (if no-ssl "http" "https")))
   ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
-  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  ;;(add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  (add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
   (when (< emacs-major-version 24)
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
@@ -29,7 +29,7 @@
  '(delimit-columns-end 100)
  '(package-selected-packages
    (quote
-    (flymake-css yafolding dracula-theme darktooth-theme ac-emacs-eclim markdown-mode eclim scss-mode helm-spotify rjsx-mode))))
+    (company cider clojure-mode flymake-css yafolding dracula-theme darktooth-theme ac-emacs-eclim markdown-mode eclim scss-mode helm-spotify rjsx-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -81,6 +81,27 @@
 (add-hook 'java-mode-hook 'eclim-mode)
 (require 'eclimd)
 
+;; Clojure
+;; Enter cider mode when entering the clojure major mode
+(add-hook 'clojure-mode-hook 'cider-mode)
+
+;; Turn on auto-completion with Company-Mode
+(global-company-mode)
+(add-hook 'cider-repl-mode-hook #'company-mode)
+(add-hook 'cider-mode-hook #'company-mode)
+
+;; Replace return key with newline-and-indent when in cider mode.
+(add-hook 'cider-mode-hook '(lambda () (local-set-key (kbd "RET") 'newline-and-indent)))
+
+;; Show parenthesis mode
+(show-paren-mode 1)
+
+;; rainbow delimiters
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+;; set F9 to run Cider with a single click
+(global-set-key [f9] 'cider-jack-in)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                               DEFAULT Emacs CONFIGURATIONS                               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -90,6 +111,9 @@
 
 ;; Use spaces instead of tabs
 (setq-default indent-tabs-mode nil)
+
+;; To make tab complete, without losing the ability to manually indent
+(global-set-key (kbd "TAB") #'company-indent-or-complete-common)
 
 ;; Default tab (spaces) size
 (setq-default tab-width 2)
