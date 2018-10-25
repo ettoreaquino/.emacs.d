@@ -1,137 +1,14 @@
-# An attempt to dive in deeper waters with Emacs.
-Emacs has an initialization file usually called .emacs, .emacs.el or init.el.
-Emacs looks for this within your home directory "~/" or at the .emacs.d directory.
+---
+description: 'Why every engineer, no matter which, should know more about software.'
+---
 
-I particularly like the idea of using the "init.el", for the simple reason that it
-stays within the .emacs.d/ directory, which can be maintained using git with all the
-other necessary emacs files and packages. 
+# Introduction
 
-## Overall Setup
-### Installation
-In case you are using Ubuntu, Kevin Kelley's PPA might be the most painless way to install Emacs:<br/>
- `sudo add-apt-repository ppa:kelleyk/emacs`<br/>
- `sudo apt update`<br/>
- `sudo apt install emacs26` : based on 26.x-series releases.
-### Clonning repository
-All packages can be cloned by grabing the dependencies:<br/>
- `git clone https://github.com/ettoreaquino/.emacs.d.git`
+A few years ago I realized most of the content I was studying in my Electrical Engineering undergrad was highly dependent upon software knowledge. Neither my professors nor my colleagues had a clue of that though. Why is that so? Why, for so many students and professors, coding was just a way of solving highly complex problems?
 
-## Java Setup with Eclim
-### Eclipse
-  In case you don't have Eclipse installed: " https://www.eclipse.org/downloads/ "
-  
-### Eclim
-  Eclim is a protocol for communication with and Eclipse server from some client.
-  Get the core protocol from " http://eclim.org/install.html " downloading the ".bin" file.
+It would be presumptuous of me to point out the reasons of this behavior. After all, I've only being working as a software engineer for the past year or so. Nevertheless some clues start to appear in my mind, and most of them are connected to the lack of real world experience we manage to gather while in school.
 
-In case you are running in a linux system:
-  1. Place the ".bin" file inside your eclipse/ directory.
-  2. `chmod +x eclim_##.bin` where `##` stands for the version number downloaded;
-  3. `./eclim_##.bin` in case a permission is denied `sudo ./eclim_##.bin`
-  4. `emacs`
-     1. `M-x list-packages`
-     2. Install `eclim`
-     3. Install `ac-emacs-eclim` "auto complete"
-     
-## Clojure Setup with Cider
-### Clojure
- Clojure is predominantly a functional programming language, combining the approachability and interactive development of a scripting language with an efficient and robust infrastructure for multithreaded programming. "https://clojure.org/".
- I started learning Clojure as a way to develop my back-end programming skills. Specially because it is completely dinamic and provides easy access to the Java frameworks. Most of the stuff writen here was taken out of "http://clojure-doc.org/articles/tutorials/emacs.html" and "http://fgiasson.com/blog/index.php/2016/06/14/my-optimal-gnu-emacs-settings-for-developing-clojure-revised/". 
- Start by installing Leiningen (https://leiningen.org/), a dependency management and build automation tool. It helps out software projects writen in Clojure language. Make sure you have JAVA already installed.
+Software became a critical part of our world, as you acknowledge it or not.  From very simple electronics and mobile applications, to the control of vehicle systems or even continental sized power systems, software is a key part that allows our civilization to work. Robert C. Martin \(Uncle Bob\), in a [Hakka Lab lecture](https://youtu.be/HhNIttd87xs?t=843), pointed out how software has penetrated in our lives and how we do not have enough people to deal with it.
 
-### CIDER
- Clojure Integrated Development and REPL. The Clojure IDE includes everythin you need to work in Emacs. It not only runs the REPL but also debugs code, looks for definition and etc.
- 
- After starting Emacs, install the following packages by typing:
-  1. `M-x package-install [RET] clojure [RET]`
-  2. `M-x package-install [RET] cider [RET]` - Clojure Integrated Development
-  3. `M-x package-install [RET] company [RET]` - Auto-completion inside of source code and REPL buffers.
-  4. `M-x package-install [RET] rainbow-delimiters] [RET]` - Highlights parentheses, brackets, and braces according to their depth.
+So, does that mean everyone should start learning how to code? Or how to model real world problems or understand a bit of software architecture? Surely not. Does that mean engineers of all branches should learn how software is developed, where does it run, who develops it and how is it deployed? In my opinion, yes!
 
-## Survival guide for the first week of emacs
-The following guide was composed from magnars tamplate:
- "https://github.com/magnars/.emacs.d/blob/master/README.md"
-and slowly improved using Emacs manual:
- "https://www.gnu.org/software/emacs/manual/"
-
-When you start using emacs for the first time, your habits fight you every inch
-of the way. Your fingers long for the good old familiar keybindings. Here's an
-overview of the most commonly used shortcuts to get you through this pain:
-
-* `C      ` Shorthand for the ctrl-key
-* `M      ` Shorthand for the meta-key (bound to cmd on my mac settings)
-* `S      ` Shorthand for the shift-key
-
-### Files
-
-* `C-x C-f` Open a file. Starts in the current directory
-* `C-x f  ` Open a recently visited file
-* `C-x o  ` Open a file in the current project (based on .git ++)
-* `C-x C-s` Save this file
-* `C-x C-w` Save as ...
-* `C-x C-j` Jump to this files' current directory
-* `C-x b  ` Switch to another open file (buffer)
-* `C-x C-b` List all open files (buffers)
-
-### Cut copy and paste
-
-* `C-space` Start marking stuff. C-g to cancel.
-* `C-w    ` Cut (aka kill)
-* `C-k    ` Cut till end of line
-* `M-w    ` Copy
-* `C-y    ` Paste (aka yank)
-* `M-y    ` Cycle last paste through previous kills
-* `C-x C-y` Choose what to paste from previous kills
-* `C-@    ` Mark stuff quickly. Press multiple times
-
-### General
-
-* `C-g    ` Quit out of whatever mess you've gotten yourself into
-* `M-x    ` Run a command by name
-* `C-.    ` Autocomplete
-* `C-_    ` Undo one entry of the undo records
-* `M-_    ` Redo
-* `C-x u  ` Show the undo-tree
-* `C-x m  ` Open magit. It's a magical git interface for emacs
-* `C-x C-c` Kill Emacs (save-buffers-kill-emacs)
-* `C-z    ` Suspend Emacs (suspend-emacs). Resume from shell with %emacs
-
-### Navigation
-
-* `C-arrow` Move past words/paragraphs
-* `C-a    ` Go to start of line
-* `C-e    ` Go to end of line
-* `M-g M-g` Go to line number
-* `C-x C-i` Go to symbol
-* `C-s    ` Search forward. Press `C-s` again to go further.
-* `C-r    ` Search backward. Press `C-r` again to go further.
-
-### Buffer Menu (`C-x C-b`)
-  https://www.gnu.org/software/emacs/manual/html_node/emacs/Several-Buffers.html
-* "." Indicates the buffer is current
-* "%" Indicates the buffer is a read-only
-* "*" Indicates the buffer is modified
-* `d  ` Flag buffer for deletion. Move point down to next line
-* `s  ` Flag buffer for saving
-* `x  ` Perform all flagged deletions and saves
-* `u  ` Remove all flags from the current line. Move down
-
-### Window Management
-
-* `C-x 0  ` Close this window
-* `C-x 1  ` Close other windows
-* `C-x 2  ` Split window horizontally
-* `C-x 3  ` Split window vertically
-
-### Frame Management
-* `C-x 5 2` Create a new frame
-* `C-x 5 b` Selects a buffer in another frame
-* `C-x 5 f` Visit a file and select its buffer in another frame
-* `C-x 5 d` Select a Dired buffer for a directory in another frame
-* `C-x 5 0` Close the selected frame
-
-### Help
-
-* `F1 t   ` Basic tutorial
-* `F1 k   ` Help for a keybinding
-* `F1 r   ` Emacs' extensive documentation
